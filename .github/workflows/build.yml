@@ -19,6 +19,8 @@ jobs:
       - name: buildlib
         run: |
           git clone --recurse-submodules https://github.com/stevemk14ebr/PolyHook_2_0.git .
+          mkdir build
+          mkdir install
           cmake build
           cmake install
       - name: upload
