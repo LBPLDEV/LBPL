@@ -18,14 +18,12 @@ jobs:
     steps:
       - name: buildlib
         run: |
-          git clone --recurse-submodules https://github.com/stevemk14ebr/PolyHook_2_0.git .
-          mkdir _build
-          mkdir _install
-          cmake -B"./_build" -DCMAKE_INSTALL_PREFIX="./_install/" -DPOLYHOOK_BUILD_SHARED_LIB=OFF
-          cmake --build "./_build" --config Release --target install
+          git clone https://github.com/MolecularMatters/raw_pdb.git .
+          mkdir build
+          cmake --build "./build/" --config Release
       - name: upload
         uses: actions/upload-artifact@v3.1.0
         with: 
-          name: polyhook
-          path: "./_install/"
+          name: raw_pdb
+          path: "./build/src/Release/"
           
