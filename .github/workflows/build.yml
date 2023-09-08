@@ -19,7 +19,6 @@ jobs:
       - name: buildlib
         run: |
           git clone https://github.com/MolecularMatters/raw_pdb.git .
-          mkdir build
           cmake --build "./build/" --config Release
       - name: upload
         uses: actions/upload-artifact@v3.1.0
